@@ -15,8 +15,8 @@ const OddNumberComponent = ({ number }: { number: number }) => {
 
   return (
     <div>
-      <p>{waitTime ? number + 1 : number}</p>
-      <p>
+      <p className="mb-4 flex items-center justify-center">{waitTime ? number + 1 : number}</p>
+      <p className="mb-4 flex items-center justify-center">
         {waitTime
           ? "Oops, randomization had some delay. Try again !"
           : "Well done! You are a human."}
@@ -34,14 +34,16 @@ export default function OddCaptcha() {
   };
 
   return (
-    <div className="space-y-8">
-      <p>You need to do odd to verify if you are human.</p>
-      <div className="border-2 border-solid border-blue-200 w-fit">
-        <button onClick={handleClickLuck} type="button">Random</button>
+    <div className="mb-4 flex h-screen flex-col items-center justify-center">
+      <div>
+      <p className="mb-4">You need to do odd to verify if you are human.</p>
+      <div className="mb-4 flex items-center justify-center">
+        <button className="cursor-pointer rounded-lg bg-zinc-800 px-8 py-4 hover:bg-zinc-700" onClick={handleClickLuck} type="button">Random</button>
       </div>
+    </div>
       <div>
         {luckNumber % 2 === 0 ? (
-          <p>{luckNumber}</p>
+          <p className="mb-4 flex items-center justify-center">{luckNumber}</p>
         ) : (
           <OddNumberComponent number={luckNumber} />
         )}
