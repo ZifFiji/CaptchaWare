@@ -65,7 +65,6 @@ export default function BinaryCaptcha() {
           type="text"
           value={response}
           onChange={(e) => setResponse(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && setReponse(e.target.value)}
           placeholder="Enter your translation"
           className="mb-4 w-full max-w-md rounded border border-gray-300 px-3 py-2"
         />

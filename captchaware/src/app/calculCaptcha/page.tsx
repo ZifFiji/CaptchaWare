@@ -66,20 +66,20 @@ export default function CalculCaptcha() {
   };
 
   return (
-    <div className="space-y-8">
-      <p>Resolve this captcha</p>
-      <div className="border-2 border-solid border-blue-200 w-fit p-4">
+    <div className="mb-4 flex h-screen flex-col items-center justify-center">
+      <p className="mb-4 flex items-center justify-center">Resolve this captcha</p>
+      <div className="mb-4 flex w-fit items-center justify-center rounded-lg border-2 border-blue-200 border-solid p-4">
         "10 / 3 = ?"
       </div>
-      <div className="space-y-4">
+      <div className="mb-4 flex flex-col items-center justify-center space-y-4">
         <input
           type="text"
           value={response}
           onChange={(e) => setResponse(e.target.value)}
           placeholder="Enter your response"
-          className="border border-gray-300 px-3 py-2 rounded w-full max-w-md"
+          className="w-full max-w-md border border-gray-300 px-3 py-2"
         />
-        <button onClick={handleClick}>Verify</button>
+        <button type="button" onClick={handleClick} className="mb-4 items-center justify-center rounded border border-gray-300 px-3 py-2" >Verify</button>
       </div>
       {submitted && (
         <div>
