@@ -37,7 +37,7 @@ export default function OddCaptcha() {
     <div className="space-y-8">
       <p>You need to do odd to verify if you are human.</p>
       <div className="border-2 border-solid border-blue-200 w-fit">
-        <button onClick={handleClickLuck}>Random</button>
+        <button onClick={handleClickLuck} type="button">Random</button>
       </div>
       <div>
         {luckNumber % 2 === 0 ? (
