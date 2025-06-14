@@ -13,14 +13,14 @@ export default function Home() {
       </div>
       
       <div className="grid w-full max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <GameCard href="/oddCaptcha" title="Premier Captcha" color="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700" />
-        <GameCard href="/realCaptcha" title="Deuxième Captcha"  color="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700" />
-        <GameCard href="/screamer" title="Troisième Captcha"  color="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700" />
-        <GameCard href="/binaryCaptcha" title="Quatrième Captcha"  color="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700" />
-        <GameCard href="/whereIsWaldo" title="Cinquième Captcha"  color="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700" />
-        <GameCard href="/wordleCaptcha" title="Sixième Captcha"  color="bg-gradient-to-r from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700" />
-        <GameCard href="/roulette" title="Septième Captcha"  color="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700" />
-        <GameCard href="/calculCaptcha" title="Huitième Captcha"  color="bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700" />
+        <GameCard href="/oddCaptcha" title="First Captcha" color="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700" />
+        <GameCard href="/realCaptcha" title="Second Captcha"  color="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700" />
+        <GameCard href="/screamer" title="Third Captcha"  color="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700" />
+        <GameCard href="/binaryCaptcha" title="Fourth Captcha"  color="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700" />
+        <GameCard href="/whereIsWaldo" title="Fifth Captcha"  color="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700" />
+        <GameCard href="/wordleCaptcha" title="Sixth Captcha"  color="bg-gradient-to-r from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700" />
+        <GameCard href="/roulette" title="Seventh Captcha"  color="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700" />
+        <GameCard href="/calculCaptcha" title="Eighth Captcha"  color="bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700" />
       </div>
     </div>
   );
@@ -33,7 +33,7 @@ function GameCard({ href, title, color }: { href: string; title: string; color: 
         <h3 className="mb-3 font-bold text-white text-xl">{title}</h3>
         <div className="mt-4 flex items-center text-sm text-white/80">
           <span>Jouer maintenant</span>
-          <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
           </svg>
         </div>
