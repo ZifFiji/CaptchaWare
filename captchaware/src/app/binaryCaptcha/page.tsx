@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const BinaryCaptchaComponent = ({isCorrect}: {isCorrect: boolean}) => {
+const BinaryCaptchaComponent = ({isCorrect, isSkipped}: {isCorrect: boolean, isSkipped: boolean}) => {
   const [waitTime, setWaitTime] = useState(false);
 
   useEffect(() => {
@@ -20,11 +20,14 @@ const BinaryCaptchaComponent = ({isCorrect}: {isCorrect: boolean}) => {
           "Correct translation."
         )
         }
-        {!isCorrect && (
+        {!isCorrect && !isSkipped &&(
           "Incorrect translation. Try again!"
         )}
         {isCorrect && waitTime &&(
           "Captcha failed. Only robots understand binary."
+        )}
+        {isSkipped && (
+          "Captcha skipped."
         )}
       </p>
     </div>
@@ -35,6 +38,7 @@ const BinaryCaptchaComponent = ({isCorrect}: {isCorrect: boolean}) => {
 export default function BinaryCaptcha() {
   const [response, setResponse] = useState("");
   const [isCorrect, setIsCorrect] = useState(false);
+  const [isSkipped, setIsSkipped] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const String = "I am a Robot";
   const binarySring = "01001001 00100000 01100001 01101101 00100000 01100001 00100000 01010010 01101111 01100010 01101111 01110100";
@@ -42,6 +46,12 @@ export default function BinaryCaptcha() {
   const handleClick = () => {
     setSubmitted(true);
     setIsCorrect(response.trim().toLowerCase() === String.toLowerCase());
+  };
+
+  const handleSkip = () => {
+    setIsSkipped(true);
+    setSubmitted(true);
+    setIsCorrect(false);
   };
 
   return (
@@ -62,10 +72,12 @@ export default function BinaryCaptcha() {
       </div>
       {submitted && (
         <div>
-          <BinaryCaptchaComponent isCorrect={isCorrect} />
+          <BinaryCaptchaComponent isCorrect={isCorrect} isSkipped={isSkipped}/>
         </div>
       )}
-     <div className="absolute right-0 bottom-0 text-black">Skip</div>
+      <div className="absolute right-0 bottom-0 text-black">
+        <p onClick={handleSkip}>Skip</p>
+      </div>
     </div>
   );
 }

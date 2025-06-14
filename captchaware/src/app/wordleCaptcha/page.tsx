@@ -12,7 +12,7 @@ interface Cell {
   state: LetterState;
 }
 
-const WordleGame: React.FC = () => {
+export default function WordleGame() {
   const targetWord = "\\_(O_O)_/";
   const [guesses, setGuesses] = useState<Cell[][]>([]);
   const [currentGuess, setCurrentGuess] = useState<string>('');
@@ -20,10 +20,10 @@ const WordleGame: React.FC = () => {
   const [gameStatus, setGameStatus] = useState<'playing' | 'won' | 'lost'>('playing');
 
   useEffect(() => {
-    startNewGame();
+    startGame();
   }, []);
 
-  const startNewGame = () => {
+  const startGame = () => {
     setGuesses(Array(MAX_GUESSES).fill(null).map(() => 
       Array(WORD_LENGTH).fill(null).map(() => ({ letter: '', state: 'empty' }))
     ));
@@ -172,17 +172,9 @@ const WordleGame: React.FC = () => {
             <div className="text-lg text-gray-600 mb-4">
               The word was: <span className="font-bold">{targetWord}</span>
             </div>
-            <button
-              onClick={startNewGame}
-              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-            >
-              Play Again
-            </button>
           </div>
         )}
       </div>
     </div>
   );
 };
-
-export default WordleGame;
