@@ -13,6 +13,7 @@
     "motion": "^12.18.1",
     "next": "15.3.3",
     "react": "^19.0.0",
+    "react-custom-roulette": "^1.4.1",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.3.1"
   },
