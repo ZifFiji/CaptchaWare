@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
-const BinaryCaptchaComponent = ({ isCorrect, isSkipped }: { isCorrect: boolean; isSkipped: boolean }) => {
-  const [waitTime, setWaitTime] = useState(false)
+const BinaryCaptchaComponent = ({isCorrect, isSkipped}: {isCorrect: boolean; isSkipped: boolean}) => {
+  const [waitTime, setWaitTime] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setWaitTime(true)
-    }, 2000)
+      setWaitTime(true);
+    }, 2000);
 
-    return () => clearTimeout(timer)
-  }, [])
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div>
@@ -66,9 +66,7 @@ export default function BinaryCaptcha() {
         </div>
       )}
       <div className="absolute right-0 bottom-0 text-black">
-        <button type="button" onClick={handleSkip} onKeyDown={(e) => e.key === "Enter" && handleSkip()}>
-          Skip
-        </button>
+        <p onClick={handleSkip}>Skip</p>
       </div>
     </div>
   );
