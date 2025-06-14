@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const GuessCaptchaComponent = ({isCorrect}: {isCorrect: boolean}) => {
   return (
@@ -36,21 +36,22 @@ export default function GuessCaptcha() {
   };
 
   const handleClick = () => {
-    if (response.toLowerCase() === result.toLowerCase())
+    if (response.toLowerCase() === result.toLowerCase()) {
       setIsCorrect(true);
+    }
     setSubmitted(true);
   };
 
   return (
-    <div className="space-y-8">
-      <p>To which animal does this fart belong ?</p>
-      <div className="border-2 border-solid border-blue-200 w-fit p-4">
-        <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onClick={() => playSound(17, 10)}>
+    <div className="mb-4 flex h-screen flex-col items-center justify-center">
+      <p className="mb-4">To which animal does this fart belong ?</p>
+      <div className="mb-4 w-fit p-4">
+        <button type="button" className="cursor-pointer rounded-lg bg-zinc-800 px-8 py-4 hover:bg-zinc-700" onClick={() => playSound(17, 10)}>
           Play Sound
         </button>
       </div>
-      <div className="space-y-4">
-        <li className="list-disc pl-5">
+      <div className="mb-4 justify-center space-y-4 ">
+        <li className="flex list-none flex-col items-center justify-center font-bold text-lg">
           <ul>- Hippo</ul>
           <ul>- Elephant</ul>
           <ul>- Donkey</ul>
@@ -59,10 +60,10 @@ export default function GuessCaptcha() {
         <input
           type="text"
           placeholder="Enter your guess"
-          className="border border-gray-300 px-3 py-2 rounded w-full max-w-md"
+          className="w-full max-w-md rounded border border-gray-300 px-3 py-2"
           onChange={(e) => setResponse(e.target.value)}
         />
-        <button onClick={handleClick} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+        <button type="button" onClick={handleClick} className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
           Submit
         </button>
         </div>
