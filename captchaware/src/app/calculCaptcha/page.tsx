@@ -2,36 +2,27 @@
 
 import { useState, useEffect } from "react";
 
-const CalculCaptchaComponent = ({response, waitTime}: {response: string, waitTime: boolean}) => {
+const CalculCaptchaComponent = ({isCorrect}: {isCorrect: boolean}) => {
   return (
     <div>
       <p>
-        {!waitTime &&(
+        {!isCorrect &&(
           "Result not quite precise. Try again!"
         )
         }
-        {waitTime &&(
+        {isCorrect &&(
           "Captcha successful! You are not a robot."
         )}
       </p>
     </div>
   );
-
 }
 
 export default function CalculCaptcha() {
   const [response, setResponse] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [waitTime, setWaitTime] = useState(false);
   const [keysPressed, setKeysPressed] = useState(new Set<string>());
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setWaitTime(true);
-    }, 60000);
-
-    return () => clearTimeout(timer);
-  }, []);
+  const [isCorrect, setIsCorrect] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -62,6 +53,8 @@ export default function CalculCaptcha() {
 
   const handleClick = () => {
     setSubmitted(true);
+    if (response.length > 100)
+      setIsCorrect(true);
     setResponse("");
   };
 
@@ -83,7 +76,7 @@ export default function CalculCaptcha() {
       </div>
       {submitted && (
         <div>
-          <CalculCaptchaComponent response={response} waitTime={waitTime}/>
+          <CalculCaptchaComponent isCorrect={isCorrect}/>
         </div>
       )}
     </div>
