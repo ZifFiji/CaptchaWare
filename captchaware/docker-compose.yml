@@ -1,0 +1,6 @@
+services:
+  captchawar:
+    build: "."
+    container_name: "CaptchaWar"
+    ports:
+      - "3000:3000"
