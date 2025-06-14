@@ -1,3 +1,4 @@
+import React from "react"
 import { RouletteWheel } from "./RouletteWheel.tsx"
 
 export default function RouletteCaptcha() {
