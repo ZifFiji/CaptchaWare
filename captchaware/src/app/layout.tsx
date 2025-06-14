@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "CaptchaWare",
   description: "Jeu de Captcha",
+  icons: {
+    icon: '/Captcha.svg',
+  },
 };
 
 export default function RootLayout({
