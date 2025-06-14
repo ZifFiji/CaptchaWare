@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const BinaryCaptchaComponent = ({isCorrect, isSkipped}: {isCorrect: boolean, isSkipped: boolean}) => {
+const BinaryCaptchaComponent = ({isCorrect, isSkipped}: {isCorrect: boolean; isSkipped: boolean}) => {
   const [waitTime, setWaitTime] = useState(false);
 
   useEffect(() => {
@@ -16,23 +16,13 @@ const BinaryCaptchaComponent = ({isCorrect, isSkipped}: {isCorrect: boolean, isS
   return (
     <div>
       <p>
-        {isCorrect && !waitTime &&(
-          "Correct translation."
-        )
-        }
-        {!isCorrect && !isSkipped &&(
-          "Incorrect translation. Try again!"
-        )}
-        {isCorrect && waitTime &&(
-          "Captcha failed. Only robots understand binary."
-        )}
-        {isSkipped && (
-          "Captcha skipped."
-        )}
+        {isCorrect && !waitTime && "Correct translation."}
+        {!isCorrect && !isSkipped && !waitTime && "Incorrect translation. Try again!"}
+        {isCorrect && waitTime && "Captcha failed. Only robots understand binary."}
+        {isSkipped && "Captcha skipped."}
       </p>
     </div>
-  );
-
+  )
 }
 
 export default function BinaryCaptcha() {
@@ -40,13 +30,13 @@ export default function BinaryCaptcha() {
   const [isCorrect, setIsCorrect] = useState(false);
   const [isSkipped, setIsSkipped] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const String = "I am a Robot";
-  const binarySring = "01001001 00100000 01100001 01101101 00100000 01100001 00100000 01010010 01101111 01100010 01101111 01110100";
+  const targetString = "I am a Robot";
+  const binaryString = "01001001 00100000 01100001 01101101 00100000 01100001 00100000 01010010 01101111 01100010 01101111 01110100";
 
   const handleClick = () => {
     setSubmitted(true);
-    setIsCorrect(response.trim().toLowerCase() === String.toLowerCase());
-  };
+    setIsCorrect(response.trim().toLowerCase() === targetString.toLowerCase());
+  }
 
   const handleSkip = () => {
     setIsSkipped(true);
@@ -58,7 +48,7 @@ export default function BinaryCaptcha() {
     <div className="mb-4 flex h-screen flex-col items-center justify-center">
       <p className="mb-4">Translate this binary if your not a robot.</p>
       <div className="mb-4 flex w-fit items-center justify-center border-2 border-blue-200 border-solid p-4">
-        {binarySring}
+        {binaryString}
       </div>
       <div className="mb-4 flex flex-col items-center justify-center space-y-4">
         <input
