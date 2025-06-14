@@ -13,12 +13,13 @@ export default function Home() {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full">
-        <GameCard href="/oddCaptcha" title="Premier Jeu" color="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700" />
-        <GameCard href="/realCaptcha" title="Deuxième Jeu"  color="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700" />
-        <GameCard href="/screamer" title="Troisième Jeu"  color="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700" />
-        <GameCard href="/binaryCaptcha" title="Quatrième Jeu"  color="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700" />
-        <GameCard href="/whereIsWaldo" title="Cinquième Jeu"  color="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700" />
-        <GameCard href="/wordleCaptcha" title="Sixième Jeu"  color="bg-gradient-to-r from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700" />
+        <GameCard href="/oddCaptcha" title="Premier Captcha" color="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700" />
+        <GameCard href="/realCaptcha" title="Deuxième Captcha"  color="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700" />
+        <GameCard href="/screamer" title="Troisième Captcha"  color="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700" />
+        <GameCard href="/binaryCaptcha" title="Quatrième Captcha"  color="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700" />
+        <GameCard href="/whereIsWaldo" title="Cinquième Captcha"  color="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700" />
+        <GameCard href="/wordleCaptcha" title="Sixième Captcha"  color="bg-gradient-to-r from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700" />
+        <GameCard href="/roulette" title="Septième Captcha"  color="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700" />
       </div>
     </div>
   );

@@ -55,20 +55,21 @@ export default function BinaryCaptcha() {
   };
 
   return (
-    <div className="space-y-8">
-      <p>Translate this binary if your not a robot.</p>
-      <div className="border-2 border-solid border-blue-200 w-fit p-4">
+    <div className="mb-4 flex h-screen flex-col items-center justify-center">
+      <p className="mb-4">Translate this binary if your not a robot.</p>
+      <div className="mb-4 flex w-fit items-center justify-center border-2 border-blue-200 border-solid p-4">
         {binarySring}
       </div>
-      <div className="space-y-4">
+      <div className="mb-4 flex flex-col items-center justify-center space-y-4">
         <input
           type="text"
           value={response}
           onChange={(e) => setResponse(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && setReponse(e.target.value)}
           placeholder="Enter your translation"
-          className="border border-gray-300 px-3 py-2 rounded w-full max-w-md"
+          className="mb-4 w-full max-w-md rounded border border-gray-300 px-3 py-2"
         />
-        <button onClick={handleClick}>Verify</button>
+        <button type="button" onClick={handleClick} className="cursor-pointer rounded-lg bg-zinc-800 px-8 py-4 font-bold hover:bg-zinc-700">Verify</button>
       </div>
       {submitted && (
         <div>
