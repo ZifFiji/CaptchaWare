@@ -101,9 +101,14 @@ export default function PineapplePizza() {
   return (
     <div className="h-screen flex flex-col items-center justify-center bg-black">
       {gameFinished && (
-        <h2 className="text-2xl font-bold text-green-600 mb-2">
-          Congratulations! You are a robot! Who puts pineapples on their pizza...?
-        </h2>
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-green-600 mb-2">
+            Congratulations! You are a robot! Who puts pineapples on their pizza...?
+          </h2>
+          <p>
+            You probably need to search more.
+          </p>
+        </div>
       )}
       
       <div className="text-center mb-4">
