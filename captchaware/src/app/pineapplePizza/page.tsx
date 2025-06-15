@@ -3,6 +3,7 @@
 import pizza from "@/../public/pizza.png"
 import pineapple from "@/../public/pinneapple_piece.png"
 import Image from "next/image";
+import Link from "next/link";
 import { Rnd } from "react-rnd";
 import { useState, useRef, useEffect } from "react"
 
@@ -101,7 +102,7 @@ export default function PineapplePizza() {
     <div className="h-screen flex flex-col items-center justify-center bg-black">
       {gameFinished && (
         <h2 className="text-2xl font-bold text-green-600 mb-2">
-          Congratulations! You are a robot ! Who puts pineapples on their pizza...
+          Congratulations! You are a robot! Who puts pineapples on their pizza...?
         </h2>
       )}
       
@@ -146,9 +147,9 @@ export default function PineapplePizza() {
         ))}
         
       </div>
-      <p className="text-black">
+      <Link href="/" className="text-black">
         How the fuck put pineapple on a pizza ?
-      </p>
+      </Link>
     </div>
   );
 }
