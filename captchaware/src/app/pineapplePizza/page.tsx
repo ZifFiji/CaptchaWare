@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Rnd } from "react-rnd";
 import { useState, useRef, useEffect } from "react"
+import CaptchaNavigation from "@/components/CaptchaNaviguation";
 
 type Pineapple = {
   width: number
@@ -155,6 +156,7 @@ export default function PineapplePizza() {
       <Link href="/" className="text-black">
         How the fuck put pineapple on a pizza ?
       </Link>
+      <CaptchaNavigation/>
     </div>
   );
 }

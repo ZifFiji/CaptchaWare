@@ -1,5 +1,6 @@
 "use client";
 
+import CaptchaNavigation from "@/components/CaptchaNaviguation";
 import { useState, useEffect } from "react";
 
 const CalculCaptchaComponent = ({isCorrect}: {isCorrect: boolean}) => {
@@ -79,6 +80,7 @@ export default function CalculCaptcha() {
           <CalculCaptchaComponent isCorrect={isCorrect}/>
         </div>
       )}
+      <CaptchaNavigation/>
     </div>
   );
 }

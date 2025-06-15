@@ -11,17 +11,18 @@ export default function CaptchaNavigation() {
   useEffect(() => {
     const captchaSequence = localStorage.getItem('captchaSequence')
     const currentIndex = localStorage.getItem('currentCaptchaIndex')
+    const playAllMode = localStorage.getItem('playAllMode')
     
     if (captchaSequence && currentIndex) {
       const sequence = JSON.parse(captchaSequence)
       const index = Number.parseInt(currentIndex)
       
-      setIsSequence(true)
+      setIsSequence(playAllMode === 'true')
       
       if (index < sequence.length - 1) {
         setNextCaptcha(sequence[index + 1])
       }
-    }
+    } 
   }, [])
 
   const handleSkip = () => {
@@ -32,12 +33,13 @@ export default function CaptchaNavigation() {
     } else {
       localStorage.removeItem('captchaSequence')
       localStorage.removeItem('currentCaptchaIndex')
+      localStorage.removeItem('playAllMode')
       router.push('/')
     }
   }
 
   return isSequence ? (
-    <div className="fixed right-4 bottom-4">
+    <div className="fixed bottom-4 left-4">
       <button 
         type='button'
         onClick={handleSkip}

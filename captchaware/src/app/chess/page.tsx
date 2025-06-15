@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import CaptchaNavigation from "@/components/CaptchaNaviguation";
 
 const ChessCaptchaComponent = ({isCorrect}: {isCorrect: boolean}) => {
   return (
@@ -52,6 +53,7 @@ export default function ChessCaptcha() {
           <ChessCaptchaComponent isCorrect={isCorrect}/>
         </div>
       )}
+      <CaptchaNavigation/>
     </div>
   );
 }
