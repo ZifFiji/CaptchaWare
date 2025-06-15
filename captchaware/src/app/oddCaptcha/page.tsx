@@ -31,7 +31,6 @@ const OddNumberComponent = ({ number }: { number: number }) => {
 
   return (
     <div>
-      <p className="mb-4 flex items-center justify-center">
         {randomBoolean 
           ? (
             <div>
@@ -53,7 +52,6 @@ const OddNumberComponent = ({ number }: { number: number }) => {
               </p>
               </div>
           )}
-      </p>
     </div>
   );
 };
