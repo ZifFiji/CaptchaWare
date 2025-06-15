@@ -11,6 +11,8 @@ export function randomCaptcha() {
     "/guessCaptcha",
     "/wordTTS",
     "/chess",
+    "/people",
+    "/pineapplePizza",
   ]
   const randomIndex = Math.floor(Math.random() * routeArray.length)
   return routeArray[randomIndex]
