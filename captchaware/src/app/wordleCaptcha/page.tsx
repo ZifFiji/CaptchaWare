@@ -116,7 +116,7 @@ export default function WordleGame() {
       case 'absent':
         return 'bg-gray-500 border-gray-500 text-white';
       default:
-        return 'bg-white border-gray-300';
+        return 'bg-white border-gray-300 text-black';
     }
   };
 
@@ -133,7 +133,7 @@ export default function WordleGame() {
             <div
               key={cellIndex}
               className={`
-                w-14 h-14 border-2 flex items-center justify-center text-2xl font-bold
+                w-14 h-14 border-2 flex items-center justify-center text-2xl font-bold text-black
                 ${isCurrentRow && cellIndex < currentGuess.length 
                   ? 'border-gray-500 bg-white' 
                   : getCellStyle(cell.state)
@@ -149,9 +149,9 @@ export default function WordleGame() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8 px-4">
+    <div>
       <div className="max-w-md mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">WORDLE</h1>
+        <h1 className="text-4xl font-bold text-center mb-8 text-white-800">WORDLE</h1>
         
         <div className="text-center mb-6">
           <p>
