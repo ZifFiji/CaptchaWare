@@ -25,6 +25,7 @@ export default function Home() {
           <GameCard href="/chess" title="Chess Captcha" color="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700" />{" "}
           <GameCard href="/people" title="Picture Captcha" color="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700" />
           <GameCard href="/pineapplePizza" title="Pizza Captcha" color="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700" />
+          <GameCard href="/creditCard" title="CC Captcha" color="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700" />
         </div>
       </div>
     </div>
