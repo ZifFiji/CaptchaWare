@@ -19,11 +19,13 @@ export default function ListCaptchaButton() {
     "/chess",
     "/people",
     "/pineapplePizza",
+    "/creditCard"
   ]
 
   const startSequence = () => {
     localStorage.setItem('captchaSequence', JSON.stringify(routeArray))
     localStorage.setItem('currentCaptchaIndex', '0')
+    localStorage.setItem('playAllMode', 'true')
     router.push(routeArray[0])
   }
 
@@ -33,7 +35,7 @@ export default function ListCaptchaButton() {
       onClick={startSequence}
       className="rounded bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-2 font-bold text-white transition-all hover:from-blue-600 hover:to-purple-600"
     >
-      Jouer tous les captchas
+      Play all Captcha
     </button>
   )
 }

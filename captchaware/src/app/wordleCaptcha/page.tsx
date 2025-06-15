@@ -1,5 +1,6 @@
 "use client";
 
+import CaptchaNavigation from '@/components/CaptchaNaviguation';
 import React, { useState, useEffect, useCallback } from 'react';
 
 const WORD_LENGTH = 9;
@@ -175,6 +176,7 @@ export default function WordleGame() {
           </div>
         )}
       </div>
+      <CaptchaNavigation />
     </div>
   );
 };

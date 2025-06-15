@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import CaptchaNavigation from "@/components/CaptchaNaviguation";
 
-const PeopleCaptchaComponent = ({isCorrect}: {isCorrect: boolean}) => {
+const PeopleCaptchaComponent = ({ isCorrect }: { isCorrect: boolean }) => {
   return (
     <div>
       <p>
@@ -49,9 +50,10 @@ export default function PeopleCaptcha() {
       </div>
       {submitted && (
         <div>
-          <PeopleCaptchaComponent isCorrect={isCorrect}/>
+          <PeopleCaptchaComponent isCorrect={isCorrect} />
         </div>
       )}
+      <CaptchaNavigation />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import CaptchaNavigation from "@/components/CaptchaNaviguation";
 import { useState } from "react";
 
 const GuessCaptchaComponent = ({isCorrect}: {isCorrect: boolean}) => {
@@ -72,6 +73,7 @@ export default function GuessCaptcha() {
           <GuessCaptchaComponent isCorrect={isCorrect} />
         </div>
       )}
+      <CaptchaNavigation />
     </div>
   );
 }

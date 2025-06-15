@@ -1,5 +1,6 @@
 'use client';
 
+import CaptchaNavigation from '@/components/CaptchaNaviguation';
 import { useState } from 'react';
 
 export default function Screamer() {
@@ -53,6 +54,7 @@ export default function Screamer() {
           </div>
         </div>
       )}
+      <CaptchaNavigation />
     </div>
   );
 }

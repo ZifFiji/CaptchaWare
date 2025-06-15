@@ -1,5 +1,6 @@
 "use client";
 
+import CaptchaNavigation from "@/components/CaptchaNaviguation";
 import { useState, useEffect } from "react";
 
 const OddNumberComponent = ({ number }: { number: number }) => {
@@ -98,6 +99,7 @@ export default function OddCaptcha() {
           )}
         </div>
       </div>
+      <CaptchaNavigation />
     </div>
   );
 }

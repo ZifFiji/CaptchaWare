@@ -1,5 +1,6 @@
 "use client";
 
+import CaptchaNavigation from "@/components/CaptchaNaviguation";
 import { useState, useEffect } from "react";
 
 const BinaryCaptchaComponent = ({isCorrect, isSkipped}: {isCorrect: boolean; isSkipped: boolean}) => {
@@ -68,6 +69,7 @@ export default function BinaryCaptcha() {
       <div className="absolute right-0 bottom-0 text-black">
         <p onClick={handleSkip}>Skip</p>
       </div>
+      <CaptchaNavigation />
     </div>
   );
 }

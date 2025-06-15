@@ -1,11 +1,15 @@
-"use client";
-import MovableComponent from "./tilt";
-import FakeCaptcha from "./fakeCaptcha";
+"use client"
+import MovableComponent from "./tilt"
+import FakeCaptcha from "./fakeCaptcha"
+import CaptchaNavigation from "@/components/CaptchaNaviguation"
 
 export default function RealCaptcha() {
   return (
-    <MovableComponent>
-      <FakeCaptcha></FakeCaptcha>
-    </MovableComponent>
-  );
+    <div>
+      <MovableComponent>
+        <FakeCaptcha />
+      </MovableComponent>
+      <CaptchaNavigation />
+    </div>
+  )
 }
